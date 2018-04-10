@@ -124,9 +124,6 @@ def chooseMinElement(inMemorySortedFiles, comparedTupleElements, openFileHandles
                 minElement = comparedTupleElements[currentFileIndex][0]
                 minFileIndex = currentFileIndex
 
-    if minElement == "":
-        print(1)
-
     pushNextElementToTuple(comparedTupleElements, minFileIndex, False)
     return (minElement, filesEndReached)
 
@@ -134,9 +131,6 @@ def pushNextElementToTuple(comparedTupleElements, index, takeFront):
     if index == -1:
         return
     try:
-        # if not takeFront:
-        #     tmpVal = comparedTupleElements[index][1].__next__()
-
         comparedTupleElements[index][0] = comparedTupleElements[index][1].__next__()
     except StopIteration:
         comparedTupleElements[index][0] = ""
