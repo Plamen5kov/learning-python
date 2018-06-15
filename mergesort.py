@@ -5,7 +5,7 @@ from os.path import isfile, join
 
 def sort_input_file(inputFilePath, outputDir, availableMemory, chunkFileSize):
     canLoadInMemory = availableMemory / chunkFileSize / 2
-    # sort_file_chunks(inputFilePath, outputDir)
+    sort_file_chunks(inputFilePath, outputDir)
     mergeSortedFiles(outputDir, canLoadInMemory, chunkFileSize)
 
 def sort_file_chunks(inputFilePath, outputDir):
